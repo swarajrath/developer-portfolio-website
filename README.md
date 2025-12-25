@@ -1,11 +1,34 @@
+# 🌐 Personal Portfolio Website
 
-  # Portfolio Website
+Welcome to my personal portfolio website!  
+This site showcases my work, skills, and experience as a **Software Developer**, with a focus on clean design, performance, and user-centric interfaces.
 
-  This is a code bundle for Portfolio Website. The original project is available at https://www.figma.com/design/iL0jQWp3Gzo9U2EBMnqYSg/Portfolio-Website.
+## 🚀 About Me
 
-  ## Running the code
+I’m a Software Developer currently working at **SAP**, based in **Germany**.  
+I hold a **Master’s degree in Applied Computer Science** from **SRH Heidelberg**.
 
-  Run `npm i` to install the dependencies.
+I enjoy building scalable applications, crafting clean UIs, and solving real-world problems through technology.
 
-  Run `npm run dev` to start the development server.
-  
+## 🛠️ Tech Stack
+
+- **Frontend:** HTML, CSS, JavaScript  
+- **Frameworks / Libraries:** (React / UI5 / Fiori – update as needed)
+- **Design:** Figma (minimal, SAP Fiori–inspired aesthetics)
+- **Deployment:** Netlify / Vercel / GitHub Pages  
+- **Version Control:** Git & GitHub
+
+## ✨ Features
+
+- Minimal, clean, and responsive design  
+- Smooth interactions with subtle animations  
+- Project showcase with descriptions and tech stack  
+- About Me & Skills section  
+- Contact links (GitHub, LinkedIn, Email)
+
+## 📸 Preview
+
+> Add screenshots or a live preview link here
+
+```txt
+Live Demo: https://your-portfolio-link.com
