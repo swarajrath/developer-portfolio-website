@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://swarajrath.github.io/developer-portfolio-website/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "dev": "vite"
   },
