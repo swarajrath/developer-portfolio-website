@@ -25,7 +25,7 @@ export function Header() {
       <nav className="container mx-auto px-8 py-3">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-lg text-foreground hover:text-primary transition-colors">
-            Your Name
+            Swaraj Rath
           </a>
 
           {/* Desktop Navigation */}

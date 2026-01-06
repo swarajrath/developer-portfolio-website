@@ -4,7 +4,7 @@ export function Footer() {
       <div className="container mx-auto px-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© 2024 Your Name. All rights reserved.</p>
+            <p>© 2025 Swaraj Rath. All rights reserved.</p>
             <p>Built with React, TypeScript & Tailwind CSS</p>
           </div>
         </div>

@@ -23,12 +23,12 @@ interface EducationEntry {
 const educationData: EducationEntry[] = [
   {
     id: 'msc',
-    degree: 'M.Sc. Applied Computer Science',
+    degree: 'Masters in Applied Computer Science',
     degreeType: 'Master of Science',
     field: 'Applied Computer Science',
     institution: 'SRH Heidelberg',
     location: 'Heidelberg, Germany',
-    duration: '2021 – 2023',
+    duration: '2019 – 2021',
     focusAreas: [
       'Software Engineering',
       'Distributed Systems',
@@ -46,16 +46,16 @@ const educationData: EducationEntry[] = [
       'Collaboration and project-based learning',
       'Real-world enterprise software development practices'
     ],
-    grade: '1.3 (German grading scale)'
+    grade: '1.7 (German grading scale)'
   },
   {
     id: 'bsc',
-    degree: 'B.Sc. Computer Science',
+    degree: 'Bachelors in Computer Science',
     degreeType: 'Bachelor of Science',
     field: 'Computer Science',
     institution: 'University Name',
     location: 'City, Germany',
-    duration: '2018 – 2021',
+    duration: '2014 – 2018',
     focusAreas: [
       'Software Engineering',
       'Database Systems',

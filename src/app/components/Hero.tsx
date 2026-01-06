@@ -15,7 +15,7 @@ export function Hero() {
                 Building scalable enterprise applications with clean architecture and performance in mind.
               </p>
               <p className="text-lg text-muted-foreground">
-                M.Sc. Applied Computer Science — SRH Heidelberg
+                Masters in Applied Computer Science, Heidelberg
               </p>
             </div>
 
