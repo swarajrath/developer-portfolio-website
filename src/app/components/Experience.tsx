@@ -6,8 +6,8 @@ export function Experience() {
     {
       role: 'Software Developer',
       company: 'SAP',
-      duration: 'Jan 2022 - Present',
-      location: 'Walldorf, Germany',
+      duration: 'Jan 2023 - Present',
+      location: 'Garching, Germany',
       highlights: [
         'Developed and maintained enterprise cloud applications serving 10,000+ users across global markets',
         'Architected microservices infrastructure that improved system performance by 40%',
@@ -16,10 +16,10 @@ export function Experience() {
       tags: ['SAP BTP', 'Java', 'React', 'Microservices'],
     },
     {
-      role: 'Junior Software Developer',
+      role: 'Associate Software Developer',
       company: 'SAP',
-      duration: 'Jul 2020 - Dec 2021',
-      location: 'Walldorf, Germany',
+      duration: 'May 2021 - Dec 2022',
+      location: 'Garching, Germany',
       highlights: [
         'Built RESTful APIs and UI components for core SAP business applications',
         'Implemented automated testing pipelines, reducing bug rates by 30%',
@@ -42,8 +42,8 @@ export function Experience() {
   ];
 
   const achievements = [
-    { title: 'SAP Innovation Award', year: '2024' },
-    { title: 'AWS Certified Solutions Architect', year: '2023' },
+    { title: 'SAP Drive Tranformation Award', year: '2025' },
+    { title: 'Service Realiability Champion', year: '2024' },
     { title: 'SAP Certified Development Professional', year: '2022' },
   ];
 

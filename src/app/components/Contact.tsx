@@ -6,20 +6,20 @@ export function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'swarajrath007@gmail.com',
+      href: 'mailto:swarajrath007@gmail.com',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/yourprofile',
-      href: 'https://linkedin.com/in/yourprofile',
+      value: 'linkedin.com/in/swaraj-rath',
+      href: 'https://www.linkedin.com/in/swaraj-rath-9001b0140/',
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/yourusername',
-      href: 'https://github.com/yourusername',
+      value: 'github.com/swarajrath',
+      href: 'https://github.com/swarajrath',
     },
   ];
 

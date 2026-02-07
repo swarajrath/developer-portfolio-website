@@ -3,28 +3,28 @@ import { Card, CardContent } from './ui/card';
 export function Skills() {
   const skillCategories = [
     {
-      title: 'Frontend',
-      skills: ['React', 'TypeScript', 'JavaScript', 'HTML/CSS', 'SAPUI5', 'Vue.js'],
-    },
-    {
       title: 'Backend',
-      skills: ['Node.js', 'Java', 'Python', 'Spring Boot', 'Express.js', 'REST APIs'],
+      skills: ['ABAP Objects (OO ABAP)', 'ABAP RESTful Application Programming Model (RAP)', 'CDS Views (Basic, Composite, Consumption)', 'Spring Boot', 'CDS Annotations', 'REST APIs', 'OData V2 / OData V4', 'Unit Testing (ABAP Unit)'],
     },
     {
-      title: 'SAP / Enterprise',
-      skills: ['SAP BTP', 'SAP HANA', 'CAP', 'Fiori', 'OData', 'ABAP'],
+      title: 'Core SAP & ERP',
+      skills: ['SAP S/4HANA (Public & Private Cloud)', 'SAP Business Technology Platform (BTP)', 'Extensibility (In-App & Side-by-Side)'],
     },
     {
-      title: 'Cloud & DevOps',
-      skills: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD', 'Jenkins'],
+      title: 'Frontend',
+      skills: ['SAP UI5', 'Fiori Elements (List Report, Object Page)', 'TypeScript', 'UX Guidelines (SAP Fiori Design)', 'i18n & Accessibility'],
     },
     {
-      title: 'Databases',
-      skills: ['PostgreSQL', 'MongoDB', 'SAP HANA', 'Redis', 'MySQL'],
+      title: 'DevOps & Quality',
+      skills: ['Azure', 'Git / GitHub / GitLab', 'Transport Management (gCTS)', 'Feature Toggles', 'Logging & Monitoring'],
     },
     {
-      title: 'Tools',
-      skills: ['Git', 'Jira', 'Confluence', 'VS Code', 'IntelliJ', 'Postman'],
+      title: 'Business & Domain',
+      skills: ['Production Planning (PP)', 'Material Requirements Planning (MRP)', 'Predictive MRP (pMRP)', 'Material Coverage & Shortage Analysis', 'Production Planner Workbench', 'MRP Change Requests', 'Demand–Supply Alignment'],
+    },
+    {
+      title: 'Soft Skills',
+      skills: ['End-to-End Ownership', 'Cross-Functional Collaboration', 'Agile / Scrum', 'Confident Presenter', 'Mentoring & Knowledge Sharing', 'Positive Team Influence & Motivation'],
     },
   ];
 
