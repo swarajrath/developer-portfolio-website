@@ -28,44 +28,51 @@ const educationData: EducationEntry[] = [
     field: 'Applied Computer Science',
     institution: 'SRH Heidelberg',
     location: 'Heidelberg, Germany',
-    duration: '2019 – 2021',
+    duration: '2019 – 2021 (120 ECTS, 4 semesters)',
     focusAreas: [
-      'Software Engineering',
-      'Distributed Systems',
-      'Enterprise Applications',
-      'Databases & Architecture'
+      'Advanced Software Engineering',
+      'Distributed Systems & Cloud Computing',
+      'Enterprise Application Architecture',
+      'Database Systems & Data Management',
+      'IT Security & Information Systems',
+      'Agile Project Management'
     ],
     thesis: {
       title: 'Scalable Architecture Patterns for Distributed Enterprise Systems',
-      description: 'Research and implementation of microservices patterns for large-scale enterprise applications using cloud-native technologies.',
-      technologies: ['Kubernetes', 'Spring Boot', 'Apache Kafka', 'PostgreSQL']
+      description: 'Design and implementation of cloud-native microservices architectures for scalable enterprise applications, including evaluation of performance, resilience, and maintainability using modern DevOps practices.',
+      technologies: ['Kubernetes', 'Spring Boot', 'Apache Kafka', 'PostgreSQL', 'Docker']
     },
     keyLearnings: [
-      'Practical, industry-oriented curriculum',
-      'Strong emphasis on applied problem-solving',
-      'Collaboration and project-based learning',
-      'Real-world enterprise software development practices'
+      'Application of SRH CORE principle with intensive block-based, project-driven modules',
+      'Design of scalable and maintainable distributed architectures',
+      'Hands-on experience with enterprise-grade software systems',
+      'Agile development methodologies and collaborative team projects',
+      'Bridging academic research with industry-oriented implementation'
     ],
-    grade: '1.7 (German grading scale)'
+    grade: '1.6 (German grading scale)'
   },
   {
     id: 'bsc',
-    degree: 'Bachelors in Computer Science',
+    degree: 'Bachelors in Computer Science & Engineering',
     degreeType: 'Bachelor of Science',
-    field: 'Computer Science',
-    institution: 'University Name',
-    location: 'City, Germany',
-    duration: '2014 – 2018',
+    field: 'Computer Science & Engineering',
+    institution: 'Government College of Engineering, Kalahandi',
+    location: 'Bhawanipatna, India',
+    duration: '2014 – 2018 (4 years / 8 semesters, B.Tech)',
     focusAreas: [
-      'Software Engineering',
-      'Database Systems',
-      'Web Technologies',
-      'Algorithms & Data Structures'
+      'Fundamentals of Computer Science & Programming',
+      'Algorithms & Data Structures',
+      'Database Systems & Management',
+      'Operating Systems & Networks',
+      'Software Engineering Principles',
+      'Computer Architecture & Systems Design'
     ],
     keyLearnings: [
-      'Strong foundation in computer science fundamentals',
-      'Hands-on experience with modern development tools',
-      'Team collaboration and agile methodologies'
+      'Strong foundation in computing fundamentals and engineering principles',
+      'Extensive hands-on experience through lab work and project assignments',
+      'Exposure to real-world problem solving and design of algorithms',
+      'Team collaboration, communication skills, and professional development',
+      'Understanding of system design, software lifecycle, and modern computing practices'
     ],
     grade: '1.8 (German grading scale)'
   }
@@ -93,11 +100,10 @@ export function Education() {
                     <button
                       key={edu.id}
                       onClick={() => setSelectedId(edu.id)}
-                      className={`w-full text-left p-4 transition-colors ${
-                        selectedId === edu.id
-                          ? 'bg-primary/5 border-l-4 border-primary'
-                          : 'hover:bg-muted/50 border-l-4 border-transparent'
-                      }`}
+                      className={`w-full text-left p-4 transition-colors ${selectedId === edu.id
+                        ? 'bg-primary/5 border-l-4 border-primary'
+                        : 'hover:bg-muted/50 border-l-4 border-transparent'
+                        }`}
                     >
                       <div className="flex items-start gap-3">
                         <div className="mt-1">
