@@ -7,7 +7,7 @@ export const initGA = () => {
     // Load gtag script
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=G-2YX6B20R0Y`;
     document.head.appendChild(script);
 
     // Initialize dataLayer
