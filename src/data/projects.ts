@@ -26,11 +26,11 @@ export const projects: Project[] = [
     tags: ['Enterprise', 'Manufacturing', 'Supply Chain', 'MRP Cockpit', 'Segment Analysis']
   },
   {
-    name: 'Microservices Migration',
-    problem: 'Monolithic architecture limited scalability and deployment flexibility.',
-    solution: 'Led migration to containerized microservices with CI/CD pipelines',
-    outcome: 'Achieved 99.9% uptime, reduced deployment time from hours to minutes',
-    tech: ['Kubernetes', 'Docker', 'AWS', 'Jenkins'],
-    tags: ['Performance', 'Enterprise']
+    name: 'Predictive Material and Resource Planning (pMRP) apps',
+    problem: 'Production planners needed a safe environment to evaluate demand fluctuations, capacity constraints, and strategic planning scenarios without impacting live MRP data. Traditional MRP runs lacked flexible what-if simulation capabilities for mid- to long-term planning decisions.',
+    solution: 'Contributed to the development of the Process pMRP Simulation app within SAP S/4HANA, enabling planners to create, execute, and compare multiple simulation versions of material and capacity planning scenarios. Implemented UI5-based interfaces and integrated backend simulation logic to process demand adjustments, capacity shifts, and planning parameter changes. Ensured seamless data flow between simulation models and analytical views for scenario comparison.',
+    outcome: 'Enabled proactive decision-making by allowing planners to evaluate supply-demand imbalances and capacity overloads before executing operational MRP runs. Reduced planning risk, improved forecast reliability, and supported data-driven strategic production decisions in complex manufacturing environments.',
+    tech: ['SAP S/4HANA', 'SAPUI5', 'OData', 'RAP', 'HANA'],
+    tags: ['Enterprise', 'Manufacturing', 'Predictive Planning', 'Simulation', 'Supply Chain']
   }
 ];

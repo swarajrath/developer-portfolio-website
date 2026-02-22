@@ -18,9 +18,9 @@ export const educationData: EducationEntry[] = [
       'Agile Project Management'
     ],
     thesis: {
-      title: 'Scalable Architecture Patterns for Distributed Enterprise Systems',
-      description: 'Design and implementation of cloud-native microservices architectures for scalable enterprise applications, including evaluation of performance, resilience, and maintainability using modern DevOps practices.',
-      technologies: ['Kubernetes', 'Spring Boot', 'Apache Kafka', 'PostgreSQL', 'Docker']
+      title: 'Leveraging Voice Assistive Technology to Enhance Health Monitoring of Older Adults',
+      description: 'Designed and evaluated a context-aware mobile health application, CORE-Energy, that integrates voice user interface (VUI) assistive technology to support independent health monitoring for older adults. Conducted user-centered research to identify usability barriers in traditional mHealth systems for aging users, developed a prototype that tracks vital health metrics (e.g., blood pressure, glucose, body temperature, fitness), and performed usability testing to assess effectiveness and user satisfaction.',
+      technologies: ['React Native', 'VUI / Voice Assistive Integration', 'Firebase', 'User-Centered Design', 'Usability Testing']
     },
     keyLearnings: [
       'Application of SRH CORE principle with intensive block-based, project-driven modules',
