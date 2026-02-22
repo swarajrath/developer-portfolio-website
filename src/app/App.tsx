@@ -8,22 +8,25 @@ import { Education } from './components/Education';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { AvatarAssistant } from './components/AvatarAssistant';
+import { ThemeProvider } from './components/ThemeProvider';
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-      <AvatarAssistant />
-    </div>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+        <AvatarAssistant />
+      </div>
+    </ThemeProvider>
   );
 }

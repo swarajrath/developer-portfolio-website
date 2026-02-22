@@ -13,6 +13,7 @@ out/
 .env
 .env.local
 .env.*.local
+.env.example
 
 # OS generated files
 .DS_Store
@@ -23,6 +24,9 @@ Thumbs.db
 .idea/
 *.sublime-workspace
 *.sublime-project
+
+# Claude Code CLI
+.claude/
 
 # Logs
 logs/
