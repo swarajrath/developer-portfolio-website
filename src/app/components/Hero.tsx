@@ -60,7 +60,7 @@ export function Hero() {
                 <a href="#contact">Contact</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="/resume.pdf" download="Swaraj_Rath_Resume.pdf">
+                <a href="/CV_Swaraj_Rath_SAP_Developer.pdf" download="CV_Swaraj_Rath_SAP_Developer.pdf">
                   <Download className="mr-2" size={18} />
                   Download Resume
                 </a>
