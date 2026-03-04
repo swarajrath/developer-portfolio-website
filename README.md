@@ -10,13 +10,6 @@ I hold a **Master’s degree in Applied Computer Science** from **SRH Heidelberg
 
 I enjoy building scalable applications, crafting clean UIs, and solving real-world problems through technology.
 
-## 🛠️ Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript  
-- **Frameworks / Libraries:** (React / UI5 / Fiori – update as needed)
-- **Design:** Figma (minimal, SAP Fiori–inspired aesthetics)
-- **Deployment:** Netlify / Vercel / GitHub Pages  
-- **Version Control:** Git & GitHub
 
 ## ✨ Features
 
@@ -31,4 +24,4 @@ I enjoy building scalable applications, crafting clean UIs, and solving real-wor
 > Add screenshots or a live preview link here
 
 ```txt
-Live Demo: https://your-portfolio-link.com
+Live Demo: https://swarajrath.de
