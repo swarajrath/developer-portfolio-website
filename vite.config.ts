@@ -10,11 +10,27 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: './',
+  // Use relative paths for GitHub Pages deployment
+  // If using a custom domain, this will be overridden
+  base: process.env.GITHUB_PAGES ? '/developer-portfolio-website/' : './',
   resolve: {
     alias: {
       // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    // Optimize for production (using esbuild instead of terser)
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
     },
   },
 })

@@ -1,11 +1,19 @@
-import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { X, Send, Loader2 } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
+import { sendMessage, getSuggestedQuestions, type ChatMessage } from '@/services/aiChat';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 export function AvatarAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [inputMessage, setInputMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const suggestedQuestions = getSuggestedQuestions();
 
   useEffect(() => {
     // Check for reduced motion preference
@@ -17,6 +25,11 @@ export function AvatarAssistant() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  // Auto-scroll to bottom when new messages arrive
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
   const handleDismiss = () => {
     setIsDismissed(true);
     setIsOpen(false);
@@ -24,6 +37,14 @@ export function AvatarAssistant() {
 
   const handleAvatarClick = () => {
     setIsOpen(!isOpen);
+    // Add welcome message if opening for the first time
+    if (!isOpen && messages.length === 0) {
+      setMessages([{
+        role: 'assistant',
+        content: "Hi! 👋 I'm an AI assistant that can answer questions about this portfolio. What would you like to know?",
+        timestamp: Date.now()
+      }]);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -33,11 +54,48 @@ export function AvatarAssistant() {
     }
   };
 
-  const navigateToSection = (sectionId: string) => {
-    setIsOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleSendMessage = async () => {
+    if (!inputMessage.trim() || isLoading) return;
+
+    const userMessage: ChatMessage = {
+      role: 'user',
+      content: inputMessage.trim(),
+      timestamp: Date.now()
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInputMessage('');
+    setIsLoading(true);
+
+    try {
+      const response = await sendMessage(userMessage.content, messages);
+      const assistantMessage: ChatMessage = {
+        role: 'assistant',
+        content: response,
+        timestamp: Date.now()
+      };
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessage: ChatMessage = {
+        role: 'assistant',
+        content: "I'm having trouble responding right now. Please try again or explore the portfolio directly.",
+        timestamp: Date.now()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSuggestedQuestion = (question: string) => {
+    setInputMessage(question);
+  };
+
+  const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
     }
   };
 
@@ -185,9 +243,9 @@ export function AvatarAssistant() {
           </div>
         </button>
 
-        {/* Popover Dialog */}
+        {/* Chat Dialog */}
         {isOpen && (
-          <div className="absolute bottom-20 right-0 w-80 popover-enter">
+          <div className="absolute bottom-20 right-0 w-96 popover-enter">
             <Card className="border-border shadow-lg">
               <CardContent className="p-0">
                 {/* Header */}
@@ -198,7 +256,7 @@ export function AvatarAssistant() {
                         <circle cx="32" cy="28" r="10" fill="#0A6ED1" opacity="0.6" />
                       </svg>
                     </div>
-                    <span className="text-sm font-medium text-foreground">Assistant</span>
+                    <span className="text-sm font-medium text-foreground">AI Assistant</span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
@@ -209,34 +267,75 @@ export function AvatarAssistant() {
                   </button>
                 </div>
 
-                {/* Content */}
-                <div className="p-4 space-y-4">
-                  <p className="text-sm text-foreground">
-                    Hi, want a quick overview of my experience at SAP?
-                  </p>
-                  
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => navigateToSection('projects')}
-                      className="w-full text-left px-3 py-2 text-sm text-foreground hover:bg-muted rounded transition-colors"
+                {/* Chat Messages */}
+                <div className="h-96 overflow-y-auto p-4 space-y-3">
+                  {messages.map((message, index) => (
+                    <div
+                      key={index}
+                      className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
-                      View SAP Projects
-                    </button>
-                    <button
-                      onClick={() => navigateToSection('skills')}
-                      className="w-full text-left px-3 py-2 text-sm text-foreground hover:bg-muted rounded transition-colors"
-                    >
-                      Technical Skills
-                    </button>
-                    <button
-                      onClick={() => navigateToSection('contact')}
-                      className="w-full text-left px-3 py-2 text-sm text-foreground hover:bg-muted rounded transition-colors"
-                    >
-                      Contact Information
-                    </button>
-                  </div>
+                      <div
+                        className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
+                          message.role === 'user'
+                            ? 'bg-primary text-primary-foreground'
+                            : 'bg-muted text-foreground'
+                        }`}
+                      >
+                        {message.content}
+                      </div>
+                    </div>
+                  ))}
+                  {isLoading && (
+                    <div className="flex justify-start">
+                      <div className="bg-muted text-foreground rounded-lg px-3 py-2 text-sm flex items-center gap-2">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Thinking...
+                      </div>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </div>
 
-                  <div className="pt-3 border-t border-border">
+                {/* Suggested Questions (shown when no messages) */}
+                {messages.length <= 1 && (
+                  <div className="px-4 pb-3 space-y-2">
+                    <p className="text-xs text-muted-foreground">Suggested questions:</p>
+                    {suggestedQuestions.slice(0, 3).map((question, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSuggestedQuestion(question)}
+                        className="w-full text-left px-3 py-2 text-xs text-foreground hover:bg-muted rounded transition-colors border border-border"
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* Input Area */}
+                <div className="p-4 border-t border-border">
+                  <div className="flex gap-2">
+                    <Input
+                      value={inputMessage}
+                      onChange={(e) => setInputMessage(e.target.value)}
+                      onKeyDown={handleInputKeyDown}
+                      placeholder="Ask me anything..."
+                      disabled={isLoading}
+                      className="flex-1"
+                    />
+                    <Button
+                      onClick={handleSendMessage}
+                      disabled={!inputMessage.trim() || isLoading}
+                      size="icon"
+                    >
+                      {isLoading ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <Send className="w-4 h-4" />
+                      )}
+                    </Button>
+                  </div>
+                  <div className="mt-2">
                     <button
                       onClick={handleDismiss}
                       className="text-xs text-muted-foreground hover:text-foreground transition-colors"
