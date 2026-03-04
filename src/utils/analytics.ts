@@ -1,24 +1,5 @@
 // Google Analytics utility functions
-export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'GA_MEASUREMENT_ID';
-
-// Initialize Google Analytics
-export const initGA = () => {
-  if (typeof window !== 'undefined' && GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID') {
-    // Load gtag script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=G-2YX6B20R0Y`;
-    document.head.appendChild(script);
-
-    // Initialize dataLayer
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
-    }
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID);
-  }
-};
+const GA_MEASUREMENT_ID = 'G-2YX6B20R0Y';
 
 // Track page views
 export const trackPageView = (url: string) => {
