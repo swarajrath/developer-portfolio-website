@@ -4,6 +4,7 @@ import { Card, CardContent } from './ui/card';
 import { sendMessage, getSuggestedQuestions, type ChatMessage } from '@/services/aiChat';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import ReactMarkdown from 'react-markdown';
 
 export function AvatarAssistant() {
   const [isOpen, setIsOpen] = useState(false);
@@ -281,7 +282,26 @@ export function AvatarAssistant() {
                             : 'bg-muted text-foreground'
                         }`}
                       >
-                        {message.content}
+                        {message.role === 'assistant' ? (
+                          <ReactMarkdown
+                            components={{
+                              // Customize markdown rendering for better chat UI
+                              p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                              ul: ({node, ...props}) => <ul className="list-disc ml-4 mb-2 space-y-1" {...props} />,
+                              ol: ({node, ...props}) => <ol className="list-decimal ml-4 mb-2 space-y-1" {...props} />,
+                              li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                              strong: ({node, ...props}) => <strong className="font-semibold" {...props} />,
+                              h1: ({node, ...props}) => <h1 className="text-base font-bold mb-2" {...props} />,
+                              h2: ({node, ...props}) => <h2 className="text-sm font-bold mb-1.5" {...props} />,
+                              h3: ({node, ...props}) => <h3 className="text-sm font-semibold mb-1" {...props} />,
+                              code: ({node, ...props}) => <code className="bg-background/50 px-1 rounded text-xs" {...props} />,
+                            }}
+                          >
+                            {message.content}
+                          </ReactMarkdown>
+                        ) : (
+                          message.content
+                        )}
                       </div>
                     </div>
                   ))}

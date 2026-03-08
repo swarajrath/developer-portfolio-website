@@ -110,44 +110,48 @@ export async function sendMessage(
 function getDemoResponse(message: string): string {
   const lowerMessage = message.toLowerCase();
 
+  if (lowerMessage.includes('swaraj') || lowerMessage.includes('who are you') || lowerMessage.includes('about')) {
+    return `**About Swaraj Rath**
+
+Swaraj is a Software Developer at SAP in Garching, Germany with 4+ years of experience.
+
+**Key Highlights:**
+- 🏆 SAP Drive Transformation Award (2025)
+- 💻 Specialist in ABAP RAP, SAP Fiori, and Cloud-native applications
+- 📈 Led projects with 154+ customer adoption in 6 months
+- 🎓 M.Sc. in Applied Computer Science from SRH Heidelberg
+
+**Current Focus:**
+Production Planning (PP/MRP) applications in SAP S/4HANA Public Cloud
+
+*Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
+  }
+
   if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
-    return `I'm a skilled SAP developer with 4+ years of experience specializing in:
+    return `**Technical Expertise**
 
-**Backend:** ABAP RAP, CDS Views, OData, REST APIs
-**Frontend:** SAP UI5, Fiori Elements, TypeScript
-**Cloud:** SAP S/4HANA, SAP BTP
-**Domain:** Production Planning (PP) and MRP
+**Backend Development:**
+- ABAP RESTful Application Programming Model (RAP)
+- CDS Views (Basic, Composite, Consumption)
+- OData V2/V4 & REST APIs
+- Spring Boot
 
-I've led end-to-end development of enterprise applications with exceptional customer adoption and received multiple awards including the SAP Drive Transformation Award (2025).
+**Frontend Development:**
+- SAP UI5 & Fiori Elements
+- TypeScript
+- Modern UX Guidelines
 
-*Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
-  }
+**Cloud & DevOps:**
+- SAP S/4HANA (Public & Private Cloud)
+- SAP Business Technology Platform (BTP)
+- Azure, Git/GitHub
 
-  if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
-    return `My key projects include:
+**Domain Expertise:**
+- Production Planning (PP)
+- Material Requirements Planning (MRP)
+- Supply Chain Optimization
 
-1. **Review Order Progress** - Led a cloud-native app achieving 154 customers in 6 months, consolidating multi-level BOM and production data
-2. **Manage Material Coverage** - MRP app for production planning and shortage analysis
-3. **Monitor Material Coverage** - Multi-segment coverage monitoring system
-4. **Predictive MRP** - Simulation app for capacity planning
-
-All projects focused on manufacturing, supply chain optimization, and enterprise cloud solutions.
-
-*Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
-  }
-
-  if (lowerMessage.includes('experience') || lowerMessage.includes('background') || lowerMessage.includes('about')) {
-    return `I'm currently a Software Developer at SAP in Garching, Germany, with 4+ years of professional experience:
-
-- **Software Developer** (2023-Present): Leading architecture and development of RAP-based applications
-- **Associate Software Developer** (2021-2022): Built cloud-native SAP Fiori applications
-- **Working Student** (2020-2021): Developed Cloud Foundry applications
-
-**Education:**
-- M.Sc. Applied Computer Science - SRH Heidelberg (2019-2021)
-- B.Sc. Computer Science & Engineering - India (2014-2018)
-
-**Recent Achievements:**
+**Awards:**
 - SAP Drive Transformation Award (2025)
 - Service Reliability Champion (2024)
 - SAP Certified Development Professional (2022)
@@ -155,48 +159,131 @@ All projects focused on manufacturing, supply chain optimization, and enterprise
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
 
+  if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
+    return `**Key Projects at SAP**
+
+**1. Review Order Progress** 🚀
+- Cloud-native app for production planning
+- **154 customers in 6 months**
+- Unified multi-level BOM and production data
+- Tech: ABAP RAP, Fiori Elements V4, OData V4
+
+**2. Manage Material Coverage (F0251A)**
+- MRP app for shortage analysis
+- Real-time stock/requirements visibility
+- Direct corrective actions
+
+**3. Monitor Material Coverage (F2101A)**
+- Multi-segment coverage monitoring
+- Granular shortage detection
+- Configurable filters
+
+**4. Predictive MRP (pMRP)**
+- Simulation environment for planning scenarios
+- Capacity constraint evaluation
+- Risk-free demand analysis
+
+*Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
+  }
+
+  if (lowerMessage.includes('experience') || lowerMessage.includes('background')) {
+    return `**Professional Experience**
+
+**Software Developer at SAP** (2023-Present)
+- Architecture and development of RAP-based applications
+- End-to-end application lifecycle ownership
+- Performance optimization and cloud infrastructure
+
+**Associate Software Developer at SAP** (2021-2022)
+- Cloud-native SAP Fiori applications
+- ABAP RAP and Fiori Elements V4
+- CDS views optimization
+
+**Working Student at SAP** (2020-2021)
+- Cloud Foundry applications
+- Data modeling and analytics
+
+**Education:**
+- **M.Sc. Applied Computer Science** - SRH Heidelberg (2019-2021)
+- **B.Sc. Computer Science & Engineering** - India (2014-2018)
+
+*Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
+  }
+
   if (lowerMessage.includes('education') || lowerMessage.includes('degree') || lowerMessage.includes('study')) {
-    return `I hold two degrees in computer science:
+    return `**Education Background**
 
 **Master of Science in Applied Computer Science**
 - SRH Heidelberg, Germany (2019-2021)
+- Grade: 1.6 (German grading scale)
 - Focus: Software Engineering, Cloud Computing, Enterprise Architecture
-- Thesis: Voice assistive technology for health monitoring of older adults
 
 **Bachelor of Science in Computer Science & Engineering**
 - Government College of Engineering, Kalahandi, India (2014-2018)
-- Strong foundation in algorithms, data structures, and systems design
+- Grade: 1.8 (German grading scale)
+- Foundation in algorithms, data structures, and systems design
+
+**Master's Thesis:**
+Voice assistive technology for health monitoring of older adults
 
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
 
   if (lowerMessage.includes('sap') || lowerMessage.includes('fiori')) {
-    return `I specialize in SAP technologies with deep expertise in:
+    return `**SAP Technologies Expertise**
 
-- **SAP S/4HANA** (Public & Private Cloud)
-- **ABAP RAP** (RESTful Application Programming)
-- **SAP Fiori & UI5** (Fiori Elements, custom apps)
-- **SAP BTP** (Business Technology Platform)
-- **OData** (V2 & V4)
-- **CDS Views** (data modeling and performance optimization)
+**Core SAP:**
+- SAP S/4HANA (Public & Private Cloud)
+- ABAP RAP (RESTful Application Programming)
+- SAP BTP (Business Technology Platform)
 
-I've led multiple high-impact projects in the PP/MRP domain, achieving exceptional customer adoption and improving manufacturing efficiency.
+**UI/Frontend:**
+- SAP Fiori & UI5
+- Fiori Elements (List Report, Object Page)
+- OData (V2 & V4)
+
+**Data & Performance:**
+- CDS Views (data modeling)
+- Performance optimization
+- Large transactional datasets
+
+**Domain:**
+- Production Planning (PP)
+- Material Requirements Planning (MRP)
+- Manufacturing efficiency
+
+Multiple high-impact projects with exceptional customer adoption rates!
 
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
 
   if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('email')) {
-    return `You can reach out through the contact section at the bottom of this portfolio page! Feel free to connect for opportunities, collaborations, or just to say hello.
+    return `**Get in Touch**
+
+You can reach out through the **contact section** at the bottom of this portfolio page!
+
+Feel free to connect for:
+- Job opportunities
+- Collaboration projects
+- Technical discussions
+- Or just to say hello! 👋
 
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
 
   // Default response
-  return `Hi! I can answer questions about:
+  return `**Hi! I'm Swaraj's AI Assistant** 👋
+
+I can answer questions about:
+
+**Professional:**
 - Skills and technologies
-- Professional experience at SAP
+- Work experience at SAP
 - Key projects and achievements
+
+**Personal:**
 - Education background
+- Awards and certifications
 - Contact information
 
 What would you like to know?
@@ -209,9 +296,9 @@ What would you like to know?
  */
 export function getSuggestedQuestions(): string[] {
   return [
+    "Tell me about Swaraj",
+    "What are your key projects?",
     "Summarize your skills and expertise",
-    "What projects have you worked on at SAP?",
-    "Tell me about your experience with Fiori",
     "What's your educational background?",
     "What awards have you received?",
   ];
