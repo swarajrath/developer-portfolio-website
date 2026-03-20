@@ -20,7 +20,8 @@ export const educationData: EducationEntry[] = [
     thesis: {
       title: 'Leveraging Voice Assistive Technology to Enhance Health Monitoring of Older Adults',
       description: 'Designed and evaluated a context-aware mobile health application, CORE-Energy, that integrates voice user interface (VUI) assistive technology to support independent health monitoring for older adults. Conducted user-centered research to identify usability barriers in traditional mHealth systems for aging users, developed a prototype that tracks vital health metrics (e.g., blood pressure, glucose, body temperature, fitness), and performed usability testing to assess effectiveness and user satisfaction.',
-      technologies: ['React Native', 'VUI / Voice Assistive Integration', 'Firebase', 'User-Centered Design', 'Usability Testing']
+      technologies: ['React Native', 'VUI / Voice Assistive Integration', 'Firebase', 'User-Centered Design', 'Usability Testing'],
+      link: 'https://web.archive.org/web/20221024015351id_/http://www.iadisportal.org/components/com_booklibrary/ebooks/202105L013.pdf'
     },
     keyLearnings: [
       'Application of SRH CORE principle with intensive block-based, project-driven modules',

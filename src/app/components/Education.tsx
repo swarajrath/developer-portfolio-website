@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Card, CardContent } from './ui/card';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, ExternalLink } from 'lucide-react';
 import { educationData } from '@/data/education';
 
 export function Education() {
@@ -134,8 +134,22 @@ export function Education() {
                       </h4>
                       <div className="space-y-3">
                         <div>
-                          <div className="text-foreground mb-1">
-                            {selectedEducation.thesis.title}
+                          <div className="flex items-start justify-between gap-4 mb-1">
+                            <div className="text-foreground">
+                              {selectedEducation.thesis.title}
+                            </div>
+                            {selectedEducation.thesis.link && (
+                              <a
+                                href={selectedEducation.thesis.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-primary hover:text-primary/80 bg-primary/5 hover:bg-primary/10 rounded-md transition-colors whitespace-nowrap"
+                                aria-label="View research paper"
+                              >
+                                <span>View Paper</span>
+                                <ExternalLink className="w-3.5 h-3.5" />
+                              </a>
+                            )}
                           </div>
                           <p className="text-sm text-muted-foreground">
                             {selectedEducation.thesis.description}

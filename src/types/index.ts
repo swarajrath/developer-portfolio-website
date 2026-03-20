@@ -40,6 +40,7 @@ export interface EducationEntry {
     title: string;
     description: string;
     technologies?: string[];
+    link?: string;
   };
   keyLearnings: string[];
   grade?: string;
