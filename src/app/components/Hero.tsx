@@ -37,13 +37,13 @@ export function Hero() {
               className="space-y-4"
             >
               <h1 className="text-5xl md:text-6xl text-foreground">
-                Software Developer at SAP
+                SAP S/4HANA Infrastructure Expert & Developer
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
-                Building scalable enterprise applications with clean architecture and performance in mind.
+                Developing high-performance S/4HANA Public Cloud solutions with infrastructure excellence and end-to-end ownership
               </p>
               <p className="text-lg text-muted-foreground">
-                Masters in Applied Computer Science, Heidelberg
+                Masters in Applied Computer Science, Heidelberg | Award-Winning Developer at SAP
               </p>
             </motion.div>
 

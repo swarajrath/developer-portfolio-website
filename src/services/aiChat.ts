@@ -113,22 +113,29 @@ function getDemoResponse(message: string): string {
   if (lowerMessage.includes('swaraj') || lowerMessage.includes('who are you') || lowerMessage.includes('about')) {
     return `**About Swaraj Rath**
 
-Swaraj is a Software Developer at SAP in Garching, Germany with 4+ years of experience.
+Swaraj is an **SAP S/4HANA Infrastructure Expert & Developer** at SAP in Garching, Germany with 5+ years of experience.
 
 **Key Highlights:**
-- 🏆 SAP Drive Transformation Award (2025)
-- 💻 Specialist in ABAP RAP, SAP Fiori, and Cloud-native applications
-- 📈 Led projects with 154+ customer adoption in 6 months
+- 🏆 SAP Drive Transformation Award (2025) - High-impact customer adoption
+- 🛡️ Service Reliability Champion (2024) - Infrastructure stability excellence
+- 💡 Technical SPOC for S/4HANA development infrastructure & cloud tooling
+- 📈 Led projects with **154+ customer adoption** in 6 months
 - 🎓 M.Sc. in Applied Computer Science from SRH Heidelberg
 
-**Current Focus:**
-Production Planning (PP/MRP) applications in SAP S/4HANA Public Cloud
+**Expertise:**
+S/4HANA Public Cloud infrastructure, ABAP RAP development, CI/CD optimization, SAP BTP, Fiori Elements, and cloud-native architecture
 
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
 
   if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
     return `**Technical Expertise**
+
+**S/4HANA Infrastructure & DevOps:**
+- SAP Business Application Studio (BAS) migration & administration
+- CI/CD pipeline optimization & transport management (gCTS)
+- Cloud infrastructure stability & performance monitoring
+- Azure, SAP BTP, cost optimization (TCO)
 
 **Backend Development:**
 - ABAP RESTful Application Programming Model (RAP)
@@ -137,24 +144,18 @@ Production Planning (PP/MRP) applications in SAP S/4HANA Public Cloud
 - Spring Boot
 
 **Frontend Development:**
-- SAP UI5 & Fiori Elements
+- SAP UI5 & Fiori Elements (List Report, Object Page)
 - TypeScript
-- Modern UX Guidelines
-
-**Cloud & DevOps:**
-- SAP S/4HANA (Public & Private Cloud)
-- SAP Business Technology Platform (BTP)
-- Azure, Git/GitHub
+- Modern UX Guidelines & Accessibility
 
 **Domain Expertise:**
-- Production Planning (PP)
-- Material Requirements Planning (MRP)
-- Supply Chain Optimization
+- Production Planning (PP) & Material Requirements Planning (MRP)
+- Supply Chain Optimization & Manufacturing Efficiency
 
 **Awards:**
-- SAP Drive Transformation Award (2025)
-- Service Reliability Champion (2024)
-- SAP Certified Development Professional (2022)
+- 🏆 SAP Drive Transformation Award (2025)
+- 🛡️ Service Reliability Champion (2024)
+- ✅ SAP Certified Development Professional (2022)
 
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
@@ -190,18 +191,21 @@ Production Planning (PP/MRP) applications in SAP S/4HANA Public Cloud
     return `**Professional Experience**
 
 **Software Developer at SAP** (2023-Present)
-- Architecture and development of RAP-based applications
-- End-to-end application lifecycle ownership
-- Performance optimization and cloud infrastructure
+- **SAP S/4HANA Infrastructure Expert:** Technical SPOC for development infrastructure, CILTS, and cloud tooling
+- Led team migration to SAP Business Application Studio (BAS) with zero downtime
+- Optimized CI/CD pipelines, gCTS transport management, and deployment automation
+- Architecture and development of RAP-based applications for PP/MRP
+- End-to-end application lifecycle ownership with infrastructure excellence
+- Performance optimization, cloud stability, and cost-efficient resource management
 
 **Associate Software Developer at SAP** (2021-2022)
-- Cloud-native SAP Fiori applications
-- ABAP RAP and Fiori Elements V4
-- CDS views optimization
+- Cloud-native SAP Fiori applications on S/4HANA Public Cloud
+- ABAP RAP and Fiori Elements V4 development
+- CDS views optimization for large-scale transactional datasets
 
 **Working Student at SAP** (2020-2021)
-- Cloud Foundry applications
-- Data modeling and analytics
+- Cloud Foundry applications development
+- Data modeling and analytics pipelines
 
 **Education:**
 - **M.Sc. Applied Computer Science** - SRH Heidelberg (2019-2021)
@@ -230,9 +234,16 @@ Voice assistive technology for health monitoring of older adults
   }
 
   if (lowerMessage.includes('sap') || lowerMessage.includes('fiori')) {
-    return `**SAP Technologies Expertise**
+    return `**SAP S/4HANA & Infrastructure Expertise**
 
-**Core SAP:**
+**Infrastructure & DevOps:**
+- S/4HANA Public Cloud Infrastructure Management
+- SAP Business Application Studio (BAS) - Expert & team migration leader
+- CI/CD optimization, gCTS transport management, deployment automation
+- Technical SPOC for development infrastructure & CILTS processes
+- Cloud resource optimization & cost management (TCO)
+
+**Core SAP Development:**
 - SAP S/4HANA (Public & Private Cloud)
 - ABAP RAP (RESTful Application Programming)
 - SAP BTP (Business Technology Platform)
@@ -243,16 +254,17 @@ Voice assistive technology for health monitoring of older adults
 - OData (V2 & V4)
 
 **Data & Performance:**
-- CDS Views (data modeling)
-- Performance optimization
-- Large transactional datasets
+- CDS Views (data modeling & optimization)
+- Performance tuning for large transactional datasets
+- HANA database optimization
 
 **Domain:**
 - Production Planning (PP)
 - Material Requirements Planning (MRP)
-- Manufacturing efficiency
+- Manufacturing efficiency & supply chain optimization
 
-Multiple high-impact projects with exceptional customer adoption rates!
+**Recognition:**
+Multiple awards including Infrastructure excellence and customer adoption leadership!
 
 *Note: To get AI-powered responses, please add your Groq API token to the .env file as VITE_GROQ_API_TOKEN. Get a free token at https://console.groq.com/keys*`;
   }
@@ -277,13 +289,14 @@ Feel free to connect for:
 I can answer questions about:
 
 **Professional:**
-- Skills and technologies
+- SAP S/4HANA Infrastructure & DevOps expertise
+- Full-stack development skills and technologies
 - Work experience at SAP
 - Key projects and achievements
+- Awards and recognition
 
 **Personal:**
 - Education background
-- Awards and certifications
 - Contact information
 
 What would you like to know?
